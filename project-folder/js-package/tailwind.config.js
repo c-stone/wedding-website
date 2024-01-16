@@ -5,7 +5,13 @@ let componentsDir = './components';
 export default {
   content: [`${componentsDir}/**/*.{js,ts,jsx,tsx}`, `./components/`],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Cabin', 'sans-serif'],
+        serif: ['Libre Baskerville', 'serif'],
+        display: ['Yeseva One', 'serif'],
+      },
+    },
   },
   plugins: [],
 };

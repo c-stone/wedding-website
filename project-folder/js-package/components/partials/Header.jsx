@@ -1,28 +1,15 @@
+import '../../styles/tailwind.css';
+import Navigation from '../Navigation';
+
 function Header() {
   return (
-    <header>
-      <nav>
-        <ul className="flex">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/rsvp">RSVP</a>
-          </li>
-          <li>
-            <a href="/travel">Travel</a>
-          </li>
-          <li>
-            <a href="/schedule">Schedule</a>
-          </li>
-          <li>
-            <a href="/gallery">Gallery</a>
-          </li>
-          <li>
-            <a href="/registry">Registry</a>
-          </li>
-        </ul>
-      </nav>
+    <header className="p-4 sticky top-0 z-50 bg-white">
+      <div className="container mx-auto">
+        <h1 className="w-full font-display text-center text-4xl font-bold tracking-wider pb-4">
+          Charlotte & Chris
+        </h1>
+        <Navigation />
+      </div>
     </header>
   );
 }
