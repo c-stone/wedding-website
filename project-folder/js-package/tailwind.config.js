@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Cabin', 'sans-serif'],
-        serif: ['Libre Baskerville', 'serif'],
+        serif: ['Roboto Serif', 'serif'],
         display: ['Yeseva One', 'serif'],
       },
     },
