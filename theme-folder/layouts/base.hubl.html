@@ -16,7 +16,9 @@
     {% else if content.translated_content %}
         <link rel="alternate" hreflang="x-default" href="{{content.translated_content.en.absolute_url}}" >
     {% endif %}
-    {% if !content.featured_image %}{#<meta property="og:image" content="https://www.yourdomain.com/hubfs/yourimage.jpg" />#}{% endif %}
+    <link href="https://fonts.googleapis.com/css?family=Yeseva+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
 </head>
 <body class="{{ builtin_body_classes }} {% if (content.widgets.opaque_navigation.body.value || opaque_navigation || content.widgets.nav_options.body.opaque_navigation) %} header-white {% else %} not-opaque {% endif %} {{ 'blog-home ' if template_meta.label is string_containing 'blog-index' }} {% if request.full_url is string_containing '/author/' %} author-listing {% endif %} {{bodyClasses}}">
 
