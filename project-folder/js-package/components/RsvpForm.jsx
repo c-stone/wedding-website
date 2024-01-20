@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 
 function RsvpForm({ guestDetails }) {
   const [rsvp, setRsvp] = useState({ guestPrimary: '', guestPlusOne: '' });
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
+
+  const { name, plusOneName } = guestDetails;
+  const primaryFirstName = name.split(' ')[0];
+  const primaryLastName = name.split(' ')[1];
+  const plusOneFirstName = plusOneName.split(' ')[0];
+  const plusOneLastName = plusOneName.split(' ')[1];
 
   const handleChange = (guest, value) => {
     setRsvp((prevRsvp) => ({
@@ -10,12 +18,81 @@ function RsvpForm({ guestDetails }) {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Process the RSVP values
+    setIsLoading(true);
+
+    // Log the RSVP details for debugging
     console.log('RSVP for Primary Guest:', rsvp.guestPrimary, guestDetails);
     console.log('RSVP for Plus One:', rsvp.guestPlusOne, guestDetails);
-    // Further processing or submission of rsvp data
+
+    // Assuming rsvp and guestDetails are already defined and hold the necessary data
+    // You need to format the data according to your API's requirements
+
+    const data = {
+      submittedAt: Date.now().toString(), // This will set current timestamp
+      fields: [
+        {
+          objectTypeId: '0-1',
+          name: 'firstname',
+          value: primaryFirstName,
+        },
+        {
+          objectTypeId: '0-1',
+          name: 'lastname',
+          value: primaryLastName,
+        },
+        {
+          objectTypeId: '0-1',
+          name: 'rsvp',
+          value: rsvp.guestPrimary,
+        },
+        {
+          objectTypeId: '0-1',
+          name: 'guest_first_name',
+          value: plusOneFirstName,
+        },
+        {
+          objectTypeId: '0-1',
+          name: 'guest_last_name',
+          value: plusOneLastName,
+        },
+        {
+          objectTypeId: '0-1',
+          name: 'guest_rsvp',
+          value: rsvp.guestPlusOne,
+        },
+      ],
+    };
+
+    try {
+      const response = await fetch(
+        'https://wedding.chrisandchar.com/_hcms/api/submitFormData',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        setIsSubmitSuccess(true);
+
+        console.log('RSVP Submission Success:', jsonResponse);
+      } else {
+        // handle HTTP responses that are not successful but don't throw an exception.
+        setIsSubmitSuccess(false);
+        console.error('RSVP Submission Failed:', response.status);
+      }
+    } catch (error) {
+      setIsSubmitSuccess(false);
+      console.error('Error during RSVP Submission:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
