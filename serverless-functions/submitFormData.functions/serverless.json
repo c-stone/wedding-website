@@ -1,0 +1,11 @@
+{
+  "runtime": "nodejs18.x",
+  "version": "1.0",
+  "secrets": ["hs_access_token"],
+  "endpoints": {
+    "submitFormData": {
+      "method": "POST",
+      "file": "submitFormData.js"
+    }
+  }
+}
