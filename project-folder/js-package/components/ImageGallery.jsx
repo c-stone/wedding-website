@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import photos from '../data/photos';
-console.log(photos);
 
 import PhotoAlbum from 'react-photo-album';
 
