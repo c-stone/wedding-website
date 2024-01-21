@@ -18,7 +18,7 @@
     "prettier": "prettier . --check",
     "watch:hubl": "hs watch theme-folder theme-folder",
     "upload:hubl": "hs upload theme-folder theme-folder",
-    "deploy": "hs project upload wedding-website"
+    "deploy": "hs project upload project-folder"
   },
   "engines": {
     "node": ">=16.0.0"
