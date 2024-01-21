@@ -1,3 +1,5 @@
+import NewTabIcon from './NewTabIcon';
+
 function RelationshipInfo() {
   return (
     <div className="pb-[150px] container mx-auto flex flex-col gap-24">
@@ -59,9 +61,9 @@ function RelationshipInfo() {
             reception at{' '}
             <a
               href="https://sacredprofane.com/"
-              className="hover:underline text-amber-700"
+              className="hover:underline text-amber-700 inline"
             >
-              Sacred Profane
+              Sacred Profane <NewTabIcon />
             </a>
             .
           </span>
