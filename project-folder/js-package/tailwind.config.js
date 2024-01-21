@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'url';
-// componentsDir = fileURLToPath(new URL('./components', import.meta.url));
+import tailwindForms from '@tailwindcss/forms';
+// let componentsDir = fileURLToPath(new URL('./components', import.meta.url));
 let componentsDir = './components';
 
 export default {
@@ -13,5 +14,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindForms],
 };

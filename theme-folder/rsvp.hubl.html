@@ -1,14 +1,13 @@
 <!--
-  templateType: page
+  templateType: "page"
   isAvailableForNewContent: true
-  label: Home Page
+  label: Rsvp Page
 -->
 
 {% extends "./layouts/base.hubl.html" %}
 {% block body %}
-
   {% js_partial
-    path="@projects/wedding-website/js-package/components/partials/Home.jsx" %}
+    path="@projects/wedding-website/js-package/components/partials/Rsvp.jsx" %}
 
   {% dnd_area "Main DND Area" %}
   {% end_dnd_area %}
