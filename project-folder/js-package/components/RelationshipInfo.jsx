@@ -1,3 +1,5 @@
+import NewTabIcon from './NewTabIcon';
+
 function RelationshipInfo() {
   return (
     <div className="pb-[150px] container mx-auto flex flex-col gap-24">
@@ -12,12 +14,11 @@ function RelationshipInfo() {
         </div>
         <div className="px-10 md:w-1/2 flex flex-col items-center md:border-l-2 md:border-l-black">
           <span className="text-sm font-light font-serif leading-8 text-center items-center tracking-wider py-5 md:max-w-[350px]">
-            Charlotte and Chris both moved to Portland, Oregon in the Winter of
-            2019 with the goal of settling into who they wanted to be. With the
-            help of an app, they matched. Charlotte liked Chris’s travel photos
-            and Chris was interested in Charlotte’s love of blueberries. They
-            met at their local Princess Bride-themed bar, bonding over a love of
-            dogs, food, and exploring the world. They quickly realized they
+            In the winter of 2019, Charlotte and Chris moved to Portland,
+            Oregon, seeking personal growth. They connected through an app,
+            drawn to each other&apos;s interests in travel and blueberries.
+            Their first meeting at a Princess Bride-themed bar revealed shared
+            passions for dogs, food, and exploration. They quickly realized they
             wanted to spend every minute together, and in a few short weeks,
             they were in love.
           </span>
@@ -34,17 +35,13 @@ function RelationshipInfo() {
         </div>
         <div className="px-10 md:w-1/2 flex flex-col items-center md:border-l-2 md:border-l-black">
           <span className="text-sm font-light font-serif leading-8 text-center items-center tracking-wider py-5 md:max-w-[350px]">
-            Once Charlotte chose to move with Chris to the East coast, they knew
-            it was time to make the next step in their relationship. The weekend
-            before they began to pack for the move, under the guise of running
-            errands, Chris turned the car toward Overlook Park. As they walked
-            through the area they had their third date almost 4 years before,
-            Chris lovingly explained everything about each other and their
-            relationship that had brought them to that point. Getting down on
-            one knee under the tree they had shared many meals, Chris asked
-            Charlotte to be his life partner. The “yes” from Charlotte was
-            instantaneous and they immediately went off to celebrate, excited to
-            think about what the future would hold.
+            When Charlotte agreed to move East with Chris, they were ready for a
+            new chapter. Just before packing, Chris, under the guise of running
+            errands, drove to Overlook Park, where they had their third date
+            four years earlier. There, reminiscing about their journey together,
+            Chris proposed under the tree where they&apos;d shared many meals.
+            Charlotte&apos;s &quot;yes&quot; was immediate, and they joyfully
+            celebrated, eager for their future together.
           </span>
         </div>
       </div>
@@ -64,9 +61,9 @@ function RelationshipInfo() {
             reception at{' '}
             <a
               href="https://sacredprofane.com/"
-              className="hover:underline text-amber-700"
+              className="hover:underline text-amber-700 inline"
             >
-              Sacred Profane
+              Sacred Profane <NewTabIcon />
             </a>
             .
           </span>
