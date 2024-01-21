@@ -1,10 +1,12 @@
+import NewTabIcon from './NewTabIcon';
+
 function Navigation() {
   return (
     <nav className="w-full flex flex-col items-center">
       <ul className="w-full flex flex-row flex-wrap justify-center gap-2">
         <li className="font-serif">
           <a
-            className="p-3 tracking-widest font-thin text-base hover:underline"
+            className="p-3 tracking-widest font-thin text-base hover:underline flex flex-row"
             href="/"
           >
             Home
@@ -12,7 +14,7 @@ function Navigation() {
         </li>
         <li className="font-serif">
           <a
-            className="p-3 tracking-widest font-thin text-base hover:underline"
+            className="p-3 tracking-widest font-thin text-base hover:underline flex flex-row"
             href="/rsvp"
           >
             RSVP
@@ -20,7 +22,7 @@ function Navigation() {
         </li>
         <li className="font-serif">
           <a
-            className="p-3 tracking-widest font-thin text-base hover:underline"
+            className="p-3 tracking-widest font-thin text-base hover:underline flex flex-row"
             href="/travel"
           >
             Travel
@@ -28,7 +30,7 @@ function Navigation() {
         </li>
         <li className="font-serif">
           <a
-            className="p-3 tracking-widest font-thin text-base hover:underline"
+            className="p-3 tracking-widest font-thin text-base hover:underline flex flex-row"
             href="/schedule"
           >
             Schedule
@@ -36,7 +38,7 @@ function Navigation() {
         </li>
         <li className="font-serif">
           <a
-            className="p-3 tracking-widest font-thin text-base hover:underline"
+            className="p-3 tracking-widest font-thin text-base hover:underline flex flex-row"
             href="/gallery"
           >
             Gallery
@@ -44,10 +46,12 @@ function Navigation() {
         </li>
         <li className="font-serif">
           <a
-            className="p-3 tracking-widest font-thin text-base hover:underline"
-            href="/registry"
+            className="p-3 tracking-widest font-thin text-base hover:underline flex flex-row items-center gap-1"
+            href="https://www.zola.com/registry/charlotteandchrismay11"
+            target="_blank"
+            rel="noreferrer"
           >
-            Registry
+            Registry <NewTabIcon />
           </a>
         </li>
       </ul>

@@ -16,9 +16,10 @@ function Placeholder() {
             Hello Lovely Guests!
             <br />
             <br />
-            We're thrilled to have you visit our wedding website. This page is
-            like our love story – a beautiful work in progress. We're busy
-            adding more details and can't wait to share them with you soon.
+            We&apos;re thrilled to have you visit our wedding website. This page
+            is like our love story – a beautiful work in progress. We&apos;re
+            busy adding more details and can&apos;t wait to share them with you
+            soon.
             <br />
             <br />
             Stay tuned for updates and feel free to reach out to us if you have
