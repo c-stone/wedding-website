@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import Spinner from './Spinner';
 
 function RsvpForm({ guestDetails }) {
   const [rsvp, setRsvp] = useState({ guestPrimary: '', guestPlusOne: '' });
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
+
+  if (!guestDetails) return;
 
   const { name, plusOneName } = guestDetails;
   const primaryFirstName = name.split(' ')[0];
@@ -22,15 +25,8 @@ function RsvpForm({ guestDetails }) {
     event.preventDefault();
     setIsLoading(true);
 
-    // Log the RSVP details for debugging
-    console.log('RSVP for Primary Guest:', rsvp.guestPrimary, guestDetails);
-    console.log('RSVP for Plus One:', rsvp.guestPlusOne, guestDetails);
-
-    // Assuming rsvp and guestDetails are already defined and hold the necessary data
-    // You need to format the data according to your API's requirements
-
     const data = {
-      submittedAt: Date.now().toString(), // This will set current timestamp
+      submittedAt: Date.now().toString(),
       fields: [
         {
           objectTypeId: '0-1',
@@ -95,77 +91,81 @@ function RsvpForm({ guestDetails }) {
     }
   };
 
+  if (isSubmitSuccess) {
+    return (
+      <div className="flex flex-col items-center align-middle">
+        <span className="font-serif">Thank you!</span>
+      </div>
+    );
+  }
+
   return (
-    <>
-      {guestDetails && (
-        <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
-          <div className="flex flex-col items-center">
-            <span className="font-serif text-3xl pb-3">
-              {guestDetails.name}
-            </span>
-            <div className="flex flew-row gap-3">
-              <input
-                type="radio"
-                id="guestPrimaryWillAttend"
-                name="guestPrimaryRsvp"
-                value="willAttend"
-                checked={rsvp.guestPrimary === 'willAttend'}
-                onChange={() => handleChange('guestPrimary', 'willAttend')}
-              />
-              <label htmlFor="guestPrimaryWillAttend">Will Attend</label>
-              <br />
+    <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
+      <div className="flex flex-col items-center">
+        <span className="font-serif text-3xl pb-3">{guestDetails.name}</span>
+        <div className="flex flew-row gap-3">
+          <input
+            type="radio"
+            id="guestPrimaryWillAttend"
+            name="guestPrimaryRsvp"
+            value="willAttend"
+            checked={rsvp.guestPrimary === 'willAttend'}
+            onChange={() => handleChange('guestPrimary', 'willAttend')}
+            required
+          />
+          <label htmlFor="guestPrimaryWillAttend">Will Attend</label>
+          <br />
 
-              <input
-                type="radio"
-                id="guestPrimaryWillNotAttend"
-                name="guestPrimaryRsvp"
-                value="willNotAttend"
-                checked={rsvp.guestPrimary === 'willNotAttend'}
-                onChange={() => handleChange('guestPrimary', 'willNotAttend')}
-              />
-              <label htmlFor="guestPrimaryWillNotAttend">Will Not Attend</label>
-              <br />
-            </div>
-          </div>
-          <div className="flex flex-col items-center pb-8">
-            <span className="font-serif text-3xl pb-3">
-              {guestDetails.plusOneName}
-            </span>
-            <div className="flex flew-row gap-3">
-              <input
-                type="radio"
-                id="guestPlusOneWillAttend"
-                name="guestPlusOneRsvp"
-                value="willAttend"
-                checked={rsvp.guestPlusOne === 'willAttend'}
-                onChange={() => handleChange('guestPlusOne', 'willAttend')}
-              />
-              <label htmlFor="guestPlusOneWillAttend">Will Attend</label>
-              <br />
+          <input
+            type="radio"
+            id="guestPrimaryWillNotAttend"
+            name="guestPrimaryRsvp"
+            value="willNotAttend"
+            checked={rsvp.guestPrimary === 'willNotAttend'}
+            onChange={() => handleChange('guestPrimary', 'willNotAttend')}
+          />
+          <label htmlFor="guestPrimaryWillNotAttend">Will Not Attend</label>
+          <br />
+        </div>
+      </div>
+      <div className="flex flex-col items-center pb-8">
+        <span className="font-serif text-3xl pb-3">
+          {guestDetails.plusOneName}
+        </span>
+        <div className="flex flew-row gap-3">
+          <input
+            type="radio"
+            id="guestPlusOneWillAttend"
+            name="guestPlusOneRsvp"
+            value="willAttend"
+            checked={rsvp.guestPlusOne === 'willAttend'}
+            onChange={() => handleChange('guestPlusOne', 'willAttend')}
+            required
+          />
+          <label htmlFor="guestPlusOneWillAttend">Will Attend</label>
+          <br />
 
-              <input
-                type="radio"
-                id="guestPlusOneWillNotAttend"
-                name="guestPlusOneRsvp"
-                value="willNotAttend"
-                checked={rsvp.guestPlusOne === 'willNotAttend'}
-                onChange={() => handleChange('guestPlusOne', 'willNotAttend')}
-              />
-              <label htmlFor="guestPlusOneWillNotAttend">Will Not Attend</label>
-              <br />
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <button
-              className="bg-amber-700 hover:bg-amber-900 text-white py-4 px-8 rounded tracking-widest max-w-72"
-              type="submit"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      )}
-    </>
+          <input
+            type="radio"
+            id="guestPlusOneWillNotAttend"
+            name="guestPlusOneRsvp"
+            value="willNotAttend"
+            checked={rsvp.guestPlusOne === 'willNotAttend'}
+            onChange={() => handleChange('guestPlusOne', 'willNotAttend')}
+          />
+          <label htmlFor="guestPlusOneWillNotAttend">Will Not Attend</label>
+          <br />
+        </div>
+      </div>
+      <div className="flex flex-col items-center">
+        <button
+          className="bg-amber-700 hover:bg-amber-900 text-white py-4 px-8 rounded tracking-widest max-w-72"
+          type="submit"
+        >
+          {isLoading ? <Spinner /> : 'Submit'}
+        </button>
+      </div>
+    </form>
   );
 }
 

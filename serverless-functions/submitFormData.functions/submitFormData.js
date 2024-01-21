@@ -26,5 +26,5 @@ exports.main = async (context, sendResponse) => {
 
   await submitFormData();
 
-  sendResponse({ body: 'submitted', statusCode: 200 });
+  sendResponse({ body: {}, statusCode: 200 });
 };
