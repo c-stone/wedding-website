@@ -9,7 +9,9 @@ function NameEntryForm({ setGuestDetails, guests }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const guest = guests.find(
-      (g) => g.name.toLowerCase() === guestName.toLowerCase(),
+      (g) =>
+        g.name.toLowerCase() === guestName.toLowerCase() ||
+        g.plusOneName.toLowerCase() === guestName.toLowerCase(),
     );
     console.log(guest);
     if (guest) {
