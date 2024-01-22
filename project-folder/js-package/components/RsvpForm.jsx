@@ -5,6 +5,7 @@ function RsvpForm({ guestDetails }) {
   const [rsvp, setRsvp] = useState({ guestPrimary: '', guestPlusOne: '' });
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
+  const [number, setNumber] = useState(0);
 
   if (!guestDetails) return;
 
@@ -19,6 +20,14 @@ function RsvpForm({ guestDetails }) {
       ...prevRsvp,
       [guest]: value,
     }));
+  };
+
+  const handleNumberChange = (event) => {
+    const inputNumber = event.target.value;
+    // Ensure the input is within the desired range
+    if (inputNumber >= 0 && inputNumber <= 10) {
+      setNumber(inputNumber);
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -57,6 +66,11 @@ function RsvpForm({ guestDetails }) {
           objectTypeId: '0-1',
           name: 'guest_rsvp',
           value: rsvp.guestPlusOne,
+        },
+        {
+          objectTypeId: '0-1',
+          name: 'number_of_kids',
+          value: number,
         },
       ],
     };
@@ -157,6 +171,20 @@ function RsvpForm({ guestDetails }) {
           <br />
         </div>
       </div>
+      {guestDetails.hasChildren && (
+        <div className="flex flex-col items-center pb-8">
+          <label htmlFor="numberInput">Enter number of kiddos:</label>
+          <input
+            type="number"
+            id="numberInput"
+            name="number"
+            value={number}
+            onChange={handleNumberChange}
+            min="0"
+            max="10"
+          />
+        </div>
+      )}
       <div className="flex flex-col items-center">
         <button
           className="bg-amber-700 hover:bg-amber-900 text-white py-4 px-8 rounded tracking-widest max-w-72"
