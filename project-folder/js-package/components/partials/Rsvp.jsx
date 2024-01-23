@@ -3,7 +3,6 @@ import '../../styles/fonts.css';
 import '../../styles/tailwind.css';
 import Footer from '../Footer';
 import Header from '../Header';
-import RsvpForm from '../RsvpForm?island';
 import RsvpExperience from '../RsvpExperience?island';
 
 function Rsvp() {
