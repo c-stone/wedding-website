@@ -12,13 +12,13 @@ function NameEntryForm({ setGuestDetails, guests }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const guest = guests.find(
-
       (g) =>
-        g.name.toLowerCase() === guestName.toLowerCase() ||
-        g.plusOneName.toLowerCase() === guestName.toLowerCase(),
+        g.name.toLowerCase() === guestName.toLowerCase().trim() ||
+        g.plusOneName.toLowerCase() === guestName.toLowerCase().trim(),
     );
 
     if (guest) {
+      console.log(guest);
       setGuestDetails(guest);
       setErrorMessage(''); // Reset error message on successful find
     } else {
