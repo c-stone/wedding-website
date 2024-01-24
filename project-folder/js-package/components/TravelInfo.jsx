@@ -1,5 +1,5 @@
 import NewTabIcon from './NewTabIcon';
-import CopyOnClickButton from './copyOnClickButton';
+import CopyOnClickButton from './CopyOnClickButton';
 
 function TravelInfo() {
   return (
