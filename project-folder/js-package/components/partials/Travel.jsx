@@ -3,7 +3,7 @@ import '../../styles/fonts.css';
 import '../../styles/tailwind.css';
 import Footer from '../Footer';
 import Header from '../Header';
-import TravelInfo from '../travelInfo?island';
+import TravelInfo from '../TravelInfo?island';
 
 function Travel() {
   return (
