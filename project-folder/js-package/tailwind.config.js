@@ -1,10 +1,9 @@
 import { fileURLToPath } from 'url';
 import tailwindForms from '@tailwindcss/forms';
-let componentsDir = fileURLToPath(new URL('./components', import.meta.url));
-// let componentsDir = './components';
+// let componentsDir = fileURLToPath(new URL('./components', import.meta.url));
 
 export default {
-  content: [`${componentsDir}/**/*.{js,ts,jsx,tsx}`, `./components/`],
+  content: [`./components/**/*.{js,ts,jsx,tsx}`],
   theme: {
     extend: {
       fontFamily: {

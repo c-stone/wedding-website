@@ -14,8 +14,7 @@ function TravelInfo() {
           <h3 className=" text-xl">The Lincoln Hotel</h3>
           <span className="text-sm font-light font-serif leading-8 text-left items-center tracking-wider py-5 md:max-w-[350px]">
             This boutique hotel in the heart of Biddeford is within walking
-            distance to all wedding festivities. For your convenience, we have
-            reserved a block of rooms for our guests. Go to{' '}
+            distance to all wedding festivities. Go to{' '}
             <a
               href="https://lincolnhotelmaine.com/"
               target="_blank"
@@ -32,7 +31,7 @@ function TravelInfo() {
             >
               (207) 815-3977
             </a>{' '}
-            and use the code <CopyOnClickButton text={'OatStoneWedding'} />.
+            to book.
           </span>
           <h3 className=" text-xl">Other Accommodations</h3>
           <span className="w-full text-sm font-light font-serif leading-8 text-left items-center tracking-wider py-5 md:max-w-[350px]">
