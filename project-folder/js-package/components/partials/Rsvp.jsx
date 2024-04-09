@@ -3,18 +3,15 @@ import '../../styles/fonts.css';
 import '../../styles/tailwind.css';
 import Footer from '../Footer';
 import Header from '../Header';
-import RsvpExperience from '../RsvpExperience?island';
+// import RsvpExperience from '../RsvpExperience?island';
+import RsvpClosed from '../RsvpClosed';
 
 function Rsvp() {
   return (
     <>
       <Header />
       <div className="container mx-auto flex flex-col items-center gap-10">
-        <div className="bg-orange-100 text-orange-900 p-4 my-10" role="alert">
-          <span className="font-serif">
-            Please RSVP by April 1st, 2024. We hope to see you there!
-          </span>
-        </div>
+        <div className="p-4 my-4"></div>
 
         <div className="flex flex-col md:flex-row w-full">
           <div className="md:w-1/2 flex flex-col items-center gap-10 pb-10 px-3">
@@ -38,7 +35,7 @@ function Rsvp() {
             </div>
           </div>
           <div className="w-full md:w-1/2 px-6">
-            <Island module={RsvpExperience} />
+            <RsvpClosed />
           </div>
         </div>
       </div>

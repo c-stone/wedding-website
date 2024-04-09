@@ -13,14 +13,7 @@ function Home() {
       <Header />
       <Hero bgImage={glowBg} />
       <InviteInfo />
-      <div className="flex flex-col items-center pb-24">
-        <a
-          href="/rsvp"
-          className="bg-amber-700 hover:bg-amber-900 text-white py-4 px-8 rounded tracking-widest"
-        >
-          RSVP
-        </a>
-      </div>
+      <div className="flex flex-col items-center pb-24"></div>
       <RelationshipInfo />
       <Footer />
     </>
