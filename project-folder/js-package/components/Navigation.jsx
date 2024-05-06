@@ -15,14 +15,6 @@ function Navigation() {
         <li className="font-serif">
           <a
             className="p-3 tracking-widest font-thin text-base hover:underline flex flex-row"
-            href="/rsvp"
-          >
-            RSVP
-          </a>
-        </li>
-        <li className="font-serif">
-          <a
-            className="p-3 tracking-widest font-thin text-base hover:underline flex flex-row"
             href="/travel"
           >
             Travel

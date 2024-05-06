@@ -56,7 +56,7 @@ function ScheduleInfo() {
       </div>
       {/* Sunny */}
       {isSunny && (
-        <div className="flex flex-col" id="sunny">
+        <div className="flex flex-col px-8" id="sunny">
           <ScheduleItem
             icon={<HotelIcon />}
             time="4:30 PM"
@@ -109,7 +109,7 @@ function ScheduleInfo() {
       )}
       {/* Rainy */}
       {!isSunny && (
-        <div className="flex flex-col" id="rainy">
+        <div className="flex flex-col px-8" id="rainy">
           <ScheduleItem
             icon={<HotelIcon />}
             time="4:45 PM"
