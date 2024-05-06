@@ -22,6 +22,9 @@ function InviteInfo() {
           Biddeford, ME
         </span>
         <img className="relative w-[420px] top-[-70px]" src={floralArch}></img>
+        <p className="font-serif">
+          <span className="font-bold">Attire:</span> Semi-formal
+        </p>
       </div>
     </div>
   );
